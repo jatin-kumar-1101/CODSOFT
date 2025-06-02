@@ -1,0 +1,50 @@
+// STUDENT GRADE CALCULATOR.
+import java.util.Scanner;
+public class student {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter number of subjects => ");
+       int subs = sc.nextInt();
+        int[] marks = new int[subs];
+        int total = 0;
+        for(int i = 0;i < subs;i++){
+            System.out.println("Enter marks of "+ (i + 1) + " subject between 0 to 100");
+             marks[i] = sc.nextInt();
+             if(marks[i]<0 || marks[i]>100){
+                 System.out.println("Invalid marks, enter marks between 0 to 100");
+                 i--;
+             }
+        }
+        for(int i = 0;i<subs;i++){
+            total = total + marks[i];
+        }
+        int average = total/subs;
+        System.out.println("Total marks => "+total);
+        System.out.println("Average percentage => "+average);
+        if(average <= 100 && average >= 91){
+            System.out.println("grade 'O'");
+        }
+        else if(average <= 90 && average >= 81){
+            System.out.println("grade => 'A+'");
+        }
+        else if(average <= 80 && average >= 71){
+            System.out.println("grade => 'A'");
+        }
+        else if(average <= 70 && average >= 61){
+            System.out.println("grade => 'B+'");
+        }
+        else if(average <= 60 && average >= 51){
+            System.out.println("grade => 'B'");
+        }
+        else if(average <= 50 && average >= 41){
+            System.out.println("grade => 'C+'");
+        }
+        else if(average <= 40 && average >= 31){
+            System.out.println("grade => 'C'");
+        }
+        else if(average <= 33){
+            System.out.println("grade => 'F'");
+        }
+
+    }
+}
